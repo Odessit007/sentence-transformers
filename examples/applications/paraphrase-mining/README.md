@@ -39,7 +39,7 @@ If we pass a list of 20k sentences, we will chunk it to 20x1000 sentences, and e
 This is done to reduce the memory requirement. Increasing both values improves the speed, but increases also the memory requirement.
 
 
-The next critical thing is finding the pairs with the highest similarities. Instead of getting and sorting all n^2 pairwise scores, we take for each query only the *top_k* scores. So with *top_k=100*, we find at most 100 paraphrases per sentence per chunk. You can play around with *top_k* to the ensure a certain behaviour.
+The next critical thing is finding the pairs with the highest similarities. Instead of getting and sorting all n^2 pairwise scores, we take for each query only the *top_k* scores. So with *top_k=100*, we find at most 100 paraphrases per sentence per chunk. You can play around with *top_k* to ensure a certain behaviour.
 
 So for example, with
 ```python
