@@ -34,9 +34,7 @@ pooling_model = models.Pooling(word_embedding_model.get_word_embedding_dimension
 model = SentenceTransformer(modules=[word_embedding_model, pooling_model])
 ```
 
-First we define our individual layers, in this case, we define 'bert-base-uncased' as the *word_embedding_model*. We limit that layer to a maximal 
-sequence length of 256, texts longer than that will be truncated. Further, we create a (mean) pooling layer. We create a new *SentenceTransformer* 
-model by calling `SentenceTransformer(modules=[word_embedding_model, pooling_model])`. For the *modules* parameter, we pass a list of layers which are executed consecutively. Input text is first passed to the first entry (*word_embedding_model*). The output is then passed to the second entry (*pooling_model*), which then returns our sentence embedding.
+First we define our individual layers, in this case, we define 'bert-base-uncased' as the *word_embedding_model*. We limit that layer to a maximal sequence length of 256, texts longer than that will be truncated. Further, we create a (mean) pooling layer. We create a new *SentenceTransformer* model by calling `SentenceTransformer(modules=[word_embedding_model, pooling_model])`. For the *modules* parameter, we pass a list of layers which are executed consecutively. Input text is first passed to the first entry (*word_embedding_model*). The output is then passed to the second entry (*pooling_model*), which then returns our sentence embedding.
 
 We can also construct more complex models:
 ```python
